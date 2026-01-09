@@ -1,0 +1,187 @@
+/*
+        Jason Pompel
+        C125H-Lab04-Hands On
+            CSS Page
+        DUE: 10/29/25
+/*
+/* */
+
+/* COLORS */
+:root {
+    --accent-color:rgb(23, 111, 243);
+    --bkcolor: rgb(144, 143, 147);
+    box-sizing: border-box;
+    display: flex;
+    }
+
+/* RESET */
+* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;		
+			}
+/*STLY E RULES */
+    h1, h2, h3, p, ul { padding: 0.5em 0; }
+    ul { margin-left: 2em; }
+    h1, h2, h3, p, ul { padding: 0.5em 0; }
+    ul { margin-left: 2em; }
+
+
+/* ELEMENT SELECTORS */
+    * {
+       /* background-color: rgb(217, 217, 250);*/
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 100%;
+    }
+
+    body {
+        width: 80%;
+        margin: 40px;
+        border: 2px solid blue ;
+
+        & h1 {
+            font-size: 150%;
+            color: var(--accent-color); 
+        }
+        & h2 {
+            font-size: 130%;
+            color: var(--accent-color); 
+        }
+        & h3 {
+            font-size: 105%;
+            color: var(--accent-color);
+        }
+        & img {
+            float: left;
+            margin-right: 20pt;
+        } 
+    }
+
+    header {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        z-index: 1000;
+        padding: 0;
+        margin: 0;      
+        & h1 {
+		    font-size: 200%; 
+            background-image: url(../images/farmpan.jpg);
+            background-repeat: no-repeat; 
+            background-position:bottom;
+            background-size:100% 100%;
+            height: 120px;
+            padding:0.5em;
+            margin-bottom: -0.5em;
+            margin-top: 0.0em;
+        }      
+    }
+
+    nav {
+        display: flex; 
+        padding-top: 0.5em;
+        margin: 0;
+        border-bottom: 2px solid blue;
+        background-image: linear-gradient( 
+            30deg, 
+            blue 0%, 
+            green 55%, 
+            blue 100%);
+
+    }
+
+    .navbar {
+        border: 4px solid   red;
+        display: flex;
+        flex-basis: 100%;
+
+    }
+    .l1 {
+        flex-grow: 1;
+        flex-basis: 20%;
+    }
+    .l2 {
+        flex-grow: 1;
+        flex-basis: 20%;
+    }
+    .l3 {
+        flex-grow: 1;
+        flex-basis: 20%;
+    }
+    .l4 {
+        flex-grow: 1;
+        flex-basis: 20%;
+    }    
+
+     
+    main {  
+        display: flex; 
+        flex-direction: row;
+        padding: 2em;
+        margin: 2em;
+        & p {
+            clear:both ;
+            width: 350px;
+        }
+    }
+
+    .h2_1 {
+            float: left;
+            flex-basis: 200px;
+            flex-grow: 0;
+            flex-shrink: 0;
+            border: solid black;
+    }
+    .h2_2 {
+            float: left;
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 50%;
+            border: solid blue;
+    }
+    section {
+        display: flex;
+    }
+
+    aside {
+        order: 1; 
+        flex-basis: 200px;
+        flex-grow: 0;
+        flex-shrink: 0;
+        }
+    
+    article {
+        margin-right: 10%;
+        padding-left: 1em;
+        order: 2;
+        flex-basis: 300px;
+        flex-grow: 1;
+        flex-shrink: 1;
+        }
+        
+    .left { 
+        clear: left;
+    }
+    
+
+    footer {
+        position: sticky;
+        bottom: 0;
+        width: 100%;
+        background-color: #333;
+        color: #fff;
+        padding: 5px;
+        z-index: 1000;
+        margin-top: 8em;
+        margin-right: 0%;
+        }
+    
+
+/* CLASS SELECTORS */   
+.copywrite {
+    background-color: var(--bkcolor);
+}
+    

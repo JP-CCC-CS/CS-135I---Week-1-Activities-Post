@@ -1,0 +1,358 @@
+/*  JASON POMPEL
+    C125H-LAB 10-HANDS ON
+    CSS PAGE
+    DUE: 12/9/25
+/*
+/* */
+
+/* ROOT SECTION: COLORS */
+:root {
+    --accent-color:rgb(23, 111, 243);
+    --bkcolor: rgb(144, 143, 147);
+    box-sizing: border-box;
+    --menu-bkcolor: lightgreen; 
+    --menu-txtcolor: blue;
+    }
+
+/* RESET */
+*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;		
+}
+/*STLYE RULES */
+    h1, h2, h3, p, ul { padding: 0.5em 0; }
+    ul { margin-left: 2em; }
+
+/*PSEUDO-CLASSES */
+    a:hover, a:focus { 
+        font-style: italic; 
+        background-color: rgb(99, 100, 113); 
+    }
+
+/* ELEMENT SELECTORS */
+    * {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 100%;
+    }
+
+     body {
+        width: 90%;
+        margin: 20px;
+        border: 2px solid blue ;
+    }   
+
+
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        width: 100%;   
+        padding: 0;        
+        padding: 0;
+        margin: 0;      
+
+        & h1 {
+		    font-size: 200%; 
+            font-weight: bold;
+            background-image: url(../images/farmpan.jpg);
+            background-repeat: no-repeat; 
+            background-position: top;
+            background-size:100% 100%;
+            height: 130px;
+            /*padding:0.2em;*/
+            margin-top: -0.6em;
+            margin-bottom: -0.5em;
+        }      
+    }
+
+/* NAVIGATION  */
+    nav {
+        position:sticky;
+        top:100px;
+        height: 50;
+        z-index: 1000;  
+        padding: 1em;
+        margin-top: 1em;
+        border-bottom: 2px solid blue;
+        background-image: linear-gradient( 
+            30deg, 
+            white 0%, 
+            green 55%, 
+            white 100%);
+    }
+
+    .navbar {    
+        & a {									
+            display: block;								
+            padding: 0.5em;											
+            text-decoration: none;						
+            margin: 0em;		
+            border: 0.1em solid blue;
+            border-radius: 0.4em;								
+        }
+
+        & a:hover, a:focus {									
+            background-color: yellow;					
+            color: darkblue;								
+        }
+        & a.current {
+            background-color:yellowgreen;				
+            color: darkblue;	
+            align-self: stretch;
+        }
+
+        & ul {														
+            margin: 0;												
+            padding: 0;												
+            list-style-type: none;									
+        }
+    }    
+
+
+/* BODY OF THE PAGE */
+    main {   
+        margin-top: 30px;    
+        padding-left: 1em;
+        margin-bottom: -0.5;
+    }
+    
+    article {
+/*        margin-right: 10%;
+        padding-left: 1em;
+        & .left { 
+            clear: left;
+        } */
+        & img {
+            float: left;
+            margin-right: 20pt;
+            height: 80px;
+        }
+
+
+    }
+
+/* FORM STYLES */
+    form {
+        font: 100%;
+        margin: 0;
+        padding: 0;
+        width: 80%;
+        min-width: 350px;
+        max-width: 800px;
+
+        & #productinfo, #serviceinfo {
+            width: 350px;
+            margin-top: -25px;
+            margin-left: 15px;
+            padding: 0.5em;
+            text-align: left;
+        }
+        & textarea {
+            width: 450  px;
+            margin-top: -25px;
+            margin-left: 15px;
+            padding: 0.5em;
+            text-align: left;
+        }
+
+        & button {
+            font-weight: bold;
+            width: 10em;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 6px;
+            padding: 0.5em;
+            margin-bottom: 1em;
+        }
+
+        & button:hover {
+            background-color:var(--bkcolor);
+            color: black;
+            cursor: pointer;
+        }
+
+        & #first_name, #last_name, #email, #phone{
+            position: absolute;
+            width: 250px;
+            left: 175px;
+            padding: 0;
+            text-align: left;
+        }
+
+
+    }
+
+/* ANIMAL TABLE */
+    .animals {
+        table {
+            border-collapse: collapse;
+            width: 90%;
+        }
+
+        thead tr th {
+            align-items: left;
+            border-bottom: 2px solid black;
+            padding: 0.5em;
+            text-align: left;
+        }
+
+        td {
+            align-items: left;
+            border-bottom: 2px solid black;
+            padding: 0.5em;
+        }
+    }
+
+
+
+
+/* FOOTER */
+    footer {
+        position: sticky;
+        bottom: 0;
+        background-image: linear-gradient( 
+            30deg, 
+            white 0%, 
+            green 55%, 
+            white 100%); 
+        margin-top: 8em;
+        margin-right: 0%;
+
+    }
+
+/* CLASS SELECTORS */   
+    h1 {
+        font-size: 150%;
+        color: var(--accent-color); 
+    }
+
+    h2 {
+        font-size: 130%;
+        color: var(--accent-color); 
+    }
+    
+    h3 {
+        font-size: 105%;
+        color: var(--accent-color);
+    }
+    
+
+    .copywrite {
+        background-color: var(--bkcolor);
+    }
+    
+.menu {											
+    position: absolute;
+    left: 0;
+    background-color: var(--menu-bkcolor);
+    width: 40%;
+    display: none;
+	
+}
+
+.menu li:has(.submenu) {				
+	position: relative;			
+	& small {					
+		margin-left: 0.25em;
+	}
+	& small::after {				
+		content: "\25b6";			
+	}	
+	&:hover > .submenu {		
+		display: block;			
+	}
+}
+
+.submenu {							
+	position: absolute;			
+	top:0;					
+	left: 100%;				
+	width: 90%;											
+	background-color:lightyellow;	
+	color: var(--menu-txtcolor);				
+	display: none;							
+	& > li a { margin: 0 2px 2px;}		
+}
+
+/******  HAMBERGER MENU **********   */
+.menu-btn {
+    display: block;		
+    vertical-align: middle;		
+    padding: 0.25em 1em;			
+    color: var(--menu-txtcolor);		
+    font-size: 24px;				
+}
+.menu-btn::after {
+    content: "\2630";    			
+}
+
+#checkbox-toggle { display: none; }	
+
+#checkbox-toggle:checked ~ .menu {		
+    display: block;
+}
+#checkbox-toggle:checked ~ .menu-btn::after {	
+    content: "\2716";   /* 'X' icon */
+}
+
+
+
+/*************** MEDIA QUERIES***************/
+
+
+@media screen and (min-width: 900px) {	
+
+    .menu {											
+        display: flex;								
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 90%;	
+        height: 60px;					
+        justify-content: space-evenly;	
+        background-color: transparent;			
+        & li {									
+            flex-basis: 15%;					
+            text-align: center;					
+        }
+    }
+
+
+    article {
+        margin-right: 20%;
+        padding-left: 1em;
+        & img {
+            float: left;
+            margin-right: 20pt;
+            height: 150px;
+        }
+
+    }
+
+
+	.menu-btn {									
+        display: none;
+    }
+
+	/*MAKES SURE TO DISP MENU HORZ IF CHECKBOX CHECKED */
+	#checkbox-toggle:checked ~ .menu { display: flex; }	
+
+
+    .menu li:has(.submenu) {				
+        position: relative;			
+        & small {					
+            margin-left: 0.25em;
+        }
+        & small::after {				
+            content: "\25bc";	
+        }
+    }
+    nav {
+        height: 80px;
+    }
+
+	.submenu {							
+		position: absolute;	
+		top: 100%;					
+		left: 0;
